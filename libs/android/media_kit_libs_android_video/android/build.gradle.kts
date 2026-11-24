@@ -78,26 +78,18 @@ val downloadDependencies by tasks.registering {
         project.delete(outputDirectory)
         outputDirectory.mkdirs()
 
+        // FFmpeg n7.1.5 / mpv 0.40，仅 arm64-v8a 与 armeabi-v7a。
+        // https://github.com/newOb/libmpv-android-video-build/releases/tag/v1.2.0
         val filesToDownload = listOf(
             Triple(
-                "https://github.com/media-kit/libmpv-android-video-build/releases/download/v1.1.11/default-arm64-v8a.jar",
-                "540af35cefe192b42fafb253f8ca6580",
-                layout.buildDirectory.file("v1.1.11/default-arm64-v8a.jar").get().asFile,
+                "https://github.com/newOb/libmpv-android-video-build/releases/download/v1.2.0/default-arm64-v8a.jar",
+                "ba8ab51710486e770da4247f6c10582d",
+                layout.buildDirectory.file("v1.2.0/default-arm64-v8a.jar").get().asFile,
             ),
             Triple(
-                "https://github.com/media-kit/libmpv-android-video-build/releases/download/v1.1.11/default-armeabi-v7a.jar",
-                "348ddcebec228bb53256ac980ea2bb84",
-                layout.buildDirectory.file("v1.1.11/default-armeabi-v7a.jar").get().asFile,
-            ),
-            Triple(
-                "https://github.com/media-kit/libmpv-android-video-build/releases/download/v1.1.11/default-x86_64.jar",
-                "d8d0b19a8bb673ab61f2808b2b9bf4fa",
-                layout.buildDirectory.file("v1.1.11/default-x86_64.jar").get().asFile,
-            ),
-            Triple(
-                "https://github.com/media-kit/libmpv-android-video-build/releases/download/v1.1.11/default-x86.jar",
-                "19906a87efffbe994a0ca976ab577feb",
-                layout.buildDirectory.file("v1.1.11/default-x86.jar").get().asFile,
+                "https://github.com/newOb/libmpv-android-video-build/releases/download/v1.2.0/default-armeabi-v7a.jar",
+                "3b6064ce7ba93fe6f20d7d0d1cb06a08",
+                layout.buildDirectory.file("v1.2.0/default-armeabi-v7a.jar").get().asFile,
             ),
         )
 
