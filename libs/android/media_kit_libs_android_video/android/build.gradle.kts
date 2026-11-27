@@ -51,18 +51,18 @@ val downloadDependencies by tasks.registering {
         project.delete(outputDirectory)
         outputDirectory.mkdirs()
 
-        // FFmpeg n7.1.5 / mpv 0.40，仅 arm64-v8a 与 armeabi-v7a。
-        // https://github.com/newOb/libmpv-android-video-build/releases/tag/v1.2.0
+        // FFmpeg n9.1 / mpv 0.42，仅 arm64-v8a 与 armeabi-v7a。
+        // https://github.com/newOb/libmpv-android-video-build/releases/tag/v1.3.0
         val filesToDownload = listOf(
             Triple(
-                "https://github.com/newOb/libmpv-android-video-build/releases/download/v1.2.0/default-arm64-v8a.jar",
-                "ba8ab51710486e770da4247f6c10582d",
-                layout.buildDirectory.file("v1.2.0/default-arm64-v8a.jar").get().asFile,
+                "https://github.com/newOb/libmpv-android-video-build/releases/download/v1.3.0/default-arm64-v8a.jar",
+                "41960050603158a9e4bb29f162b8d37b",
+                layout.buildDirectory.file("v1.3.0/default-arm64-v8a.jar").get().asFile,
             ),
             Triple(
-                "https://github.com/newOb/libmpv-android-video-build/releases/download/v1.2.0/default-armeabi-v7a.jar",
-                "3b6064ce7ba93fe6f20d7d0d1cb06a08",
-                layout.buildDirectory.file("v1.2.0/default-armeabi-v7a.jar").get().asFile,
+                "https://github.com/newOb/libmpv-android-video-build/releases/download/v1.3.0/default-armeabi-v7a.jar",
+                "5dbff8ae35705814c8f1fa5462e61399",
+                layout.buildDirectory.file("v1.3.0/default-armeabi-v7a.jar").get().asFile,
             ),
         )
 
