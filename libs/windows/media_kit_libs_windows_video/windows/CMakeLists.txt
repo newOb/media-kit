@@ -65,13 +65,13 @@ function(check_directory_exists_and_not_empty dir result_var)
 endfunction()
 
 # Detect architecture and set appropriate libmpv archive.
-# x64 is the FFmpeg 7.1.5 / mpv 0.40 build. ARM64 stays on the previous
+# x64 is the FFmpeg 9.1 / mpv 0.42 build. ARM64 stays on the previous
 # upstream archive until that architecture is built successfully.
 if(${FLUTTER_TARGET_PLATFORM} STREQUAL "windows-x64")
   set(LIBMPV_ARCH "x86_64")
-  set(LIBMPV "mpv-dev-x86_64-20261126-git-e48ac7ce08.7z")
-  set(LIBMPV_MD5 "0c589080d569b598718bc0aae0ba243c")
-  set(LIBMPV_URL "https://github.com/newOb/libmpv-win32-video-cmake/releases/download/20261126/${LIBMPV}")
+  set(LIBMPV "mpv-dev-x86_64-20261127-git-b0841e8c4d.7z")
+  set(LIBMPV_MD5 "c6eb619acd4419e8a82ec8134ab08f2b")
+  set(LIBMPV_URL "https://github.com/newOb/libmpv-win32-video-cmake/releases/download/20261127/${LIBMPV}")
 else()
   set(LIBMPV_ARCH "aarch64")
   set(LIBMPV "mpv-dev-aarch64-20241021-git-0f78584.7z")
