@@ -1,9 +1,9 @@
 all: Frameworks/*.xcframework Frameworks/.symlinks
 
-# FFmpeg n7.1.5 / mpv 0.40.0，LGPL video-default。
-# https://github.com/newOb/libmpv-darwin-build/releases/tag/v1.2.2
-MPV_XCFRAMEWORKS_VERSION=v1.2.2
-MPV_XCFRAMEWORKS_SHA256SUM=03721ed3cdb52db4abdb4f94dce25bfa13490894cdbf8c9c63688c8bed66e452
+# FFmpeg n9.1 / mpv 0.42.0，LGPL video-default。
+# https://github.com/newOb/libmpv-darwin-build/releases/tag/v1.3.0
+MPV_XCFRAMEWORKS_VERSION=v1.3.0
+MPV_XCFRAMEWORKS_SHA256SUM=0d8169fb7fd288268667fd3e76fca7d1eaaeb10947b9d3e09d3ebeef1599b957
 
 TAR=tar
 TAR_WILDCARDS_FLAG := $(shell ${TAR} --version 2>&1 | grep -q 'GNU' && echo "--wildcards" || echo "")
