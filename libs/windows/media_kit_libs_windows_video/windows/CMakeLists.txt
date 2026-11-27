@@ -64,19 +64,20 @@ function(check_directory_exists_and_not_empty dir result_var)
   endif()
 endfunction()
 
-# Detect architecture and set appropriate libmpv archive
+# Detect architecture and set appropriate libmpv archive.
+# x64 is the FFmpeg 7.1.5 / mpv 0.40 build. ARM64 stays on the previous
+# upstream archive until that architecture is built successfully.
 if(${FLUTTER_TARGET_PLATFORM} STREQUAL "windows-x64")
   set(LIBMPV_ARCH "x86_64")
-  set(LIBMPV "mpv-dev-x86_64-20241021-git-0f78584.7z")
-  set(LIBMPV_MD5 "6ecf18e85b093c3f7edb16f3ee6603f3")
+  set(LIBMPV "mpv-dev-x86_64-20261126-git-e48ac7ce08.7z")
+  set(LIBMPV_MD5 "0c589080d569b598718bc0aae0ba243c")
+  set(LIBMPV_URL "https://github.com/newOb/libmpv-win32-video-cmake/releases/download/20261126/${LIBMPV}")
 else()
   set(LIBMPV_ARCH "aarch64")
   set(LIBMPV "mpv-dev-aarch64-20241021-git-0f78584.7z")
   set(LIBMPV_MD5 "5b507a35db13eee6cb7eb21e8be7c83d")
+  set(LIBMPV_URL "https://github.com/media-kit/libmpv-win32-video-cmake/releases/download/20241021/${LIBMPV}")
 endif()
-
-# Download URL for the libmpv archive from the latest release
-set(LIBMPV_URL "https://github.com/media-kit/libmpv-win32-video-cmake/releases/download/20241021/${LIBMPV}")
 
 # Download location of the libmpv archive.
 set(LIBMPV_ARCHIVE "${CMAKE_BINARY_DIR}/${LIBMPV}")
